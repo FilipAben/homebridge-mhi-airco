@@ -1,0 +1,44 @@
+{
+  "private": true,
+  "displayName": "MHI Airco",
+  "name": "homebridge-mhi-airco",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Homebridge plugin for Mitsubishi Heavy Industries Airco using WIFI RAC",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/filipaben/homebridge-mhi-airco.git"
+  },
+  "bugs": {
+    "url": "https://github.com/filiplaben/homebridge-mhi-airco/issues"
+  },
+  "engines": {
+    "node": "^18.20.4 || ^20.16.0 || ^22.5.1",
+    "homebridge": "^1.8.0 || ^2.0.0-beta.0"
+  },
+  "main": "dist/index.js",
+  "scripts": {
+    "lint": "eslint src/**/*.ts --max-warnings=0",
+    "watch": "npm run build && npm link && nodemon",
+    "build": "rimraf ./dist && tsc",
+    "prepublishOnly": "npm run lint && npm run build"
+  },
+  "keywords": [
+    "homebridge-plugin"
+  ],
+  "devDependencies": {
+    "@types/node": "^22.2.0",
+    "@typescript-eslint/eslint-plugin": "^8.0.1",
+    "@typescript-eslint/parser": "^8.0.1",
+    "eslint": "^9.9.0",
+    "homebridge": "^2.0.0-beta.0",
+    "nodemon": "^3.1.4",
+    "rimraf": "^6.0.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.4"
+  },
+  "dependencies": {
+    "axios": "^1.7.3"
+  }
+}

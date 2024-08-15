@@ -1,0 +1,49 @@
+{
+  "pluginAlias": "MHI-AIRCO",
+  "pluginType": "platform",
+  "singular": true,
+  "schema": {
+    "type": "object",
+    "properties": {
+      "name": {
+        "title": "Name",
+        "type": "string",
+        "required": true,
+        "default": "MHI-AIRCO"
+      },
+      "timezone": {
+        "title": "Timezone",
+        "type": "string",
+        "placeholder": "Europe/Brussels"
+      },
+      "airco": {
+        "title": "Air Conditioner List",
+        "type": "array",
+        "items": {
+          "title": "AC Details",
+          "type": "object",
+          "properties": {
+            "name": {
+              "title": "Name",
+              "type": "string"
+            },
+            "ip": {
+              "title": "IP address",
+              "type": "string"
+            },
+            "port": {
+              "title": "Port",
+              "type": "number",
+              "default": 51443
+            },
+            "includeOutdoorTemp": {
+              "title": "Include outdoor temperature measurement",
+              "type": "boolean",
+              "default": false
+            }
+          }
+        }
+      }
+    }
+  }
+}
